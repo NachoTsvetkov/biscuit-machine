@@ -1,0 +1,3 @@
+﻿The basic premise behind the models is that they should be pure and immutable so they can be a single source of truth. Changes on the models are very explicit and changes are easily detectable. 
+
+On top of them rendering and update optimisations could be implemented for future development. 

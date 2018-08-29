@@ -51,6 +51,14 @@ namespace BiscuitMaker
             }
         }
 
+        public Switch FirstSwitch
+        {
+            get
+            {
+                return (Switch)this.Components.FirstOrDefault(x => x is Switch);
+            }
+        }
+
         private BiscuitMaker(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
         {
             this.Components = components;
