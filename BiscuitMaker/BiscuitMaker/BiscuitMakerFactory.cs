@@ -26,6 +26,9 @@ namespace BiscuitMaker
 
             var oven = Oven.Create(settings);
             components.Add(oven);
+
+            var bucket = BiscuitBucket.Create();
+            components.Add(bucket);
             
             var biscuitMaker = BiscuitMaker.Create(components);
             
