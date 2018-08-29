@@ -30,7 +30,7 @@ namespace BiscuitMaker
             var bucket = BiscuitBucket.Create();
             components.Add(bucket);
             
-            var biscuitMaker = BiscuitMaker.Create(components);
+            var biscuitMaker = BiscuitMaker.Create(components, settings);
             
             return biscuitMaker;
         }
