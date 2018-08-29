@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BiscuitMaker
@@ -9,25 +10,56 @@ namespace BiscuitMaker
         public event EventHandler<OnClockTickEventArgs> OnClockTick;
 
         public event EventHandler<OnMotorPulseEventArgs> OnPulse;
-        
+
         public event EventHandler<OnWorkingTempReachedEventArgs> OnWorkingTempReached;
-        
+
         public event EventHandler<OnSwitchOnEventArgs> OnSwitchOn;
 
         public event EventHandler<OnSwitchOffEventArgs> OnSwitchOff;
 
         public event EventHandler<OnSwitchPauseEventArgs> OnSwitchPause;
 
-        public List<IBiscuitComponent> Components { get; internal set; }
+        /// <summary>
+        /// The components are not separate properties because the Biscuit Maker can have
+        /// multiple Stampers, Switches, Conveyors etc. Just to make it more flexible
+        /// </summary>
+        public List<IBiscuitComponent> Components { get; private set; }
 
-        private BiscuitMaker(List<IBiscuitComponent> components)
+        public BiscuitMakerSettings Settings { get; private set; }
+
+        public Conveyor FirstConveyor
         {
-            this.Components = components;
+            get
+            {
+                return (Conveyor)this.Components.FirstOrDefault(x => x is Conveyor);
+            }
         }
 
-        public static BiscuitMaker Create(List<IBiscuitComponent> components)
+        public Oven FirstOven
         {
-            return new BiscuitMaker(components);
+            get
+            {
+                return (Oven)this.Components.FirstOrDefault(x => x is Oven);
+            }
+        }
+
+        public BiscuitBucket FirstBucket
+        {
+            get
+            {
+                return (BiscuitBucket)this.Components.FirstOrDefault(x => x is BiscuitBucket);
+            }
+        }
+
+        private BiscuitMaker(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
+        {
+            this.Components = components;
+            this.Settings = settings;
+        }
+
+        public static BiscuitMaker Create(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
+        {
+            return new BiscuitMaker(components, settings);
         }
     }
 }

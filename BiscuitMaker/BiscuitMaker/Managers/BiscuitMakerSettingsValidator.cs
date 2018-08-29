@@ -10,7 +10,36 @@ namespace BiscuitMaker.Managers
         {
             var errorMessage = "";
 
-            errorMessage += GetErrorMessage(throws, settings == null && string.IsNullOrEmpty(errorMessage), "Settings can not be null");
+            errorMessage += GetErrorMessage(throws, 
+                    settings == null && 
+                    string.IsNullOrEmpty(errorMessage), 
+                "Settings can not be null"
+            );
+
+            errorMessage += GetErrorMessage(throws, 
+                    settings.ConveyorSize <= 2 + settings.OvenSize && 
+                    string.IsNullOrEmpty(errorMessage),
+                "Conveyor too small"
+            );
+
+            errorMessage += GetErrorMessage(throws, 
+                    settings.ExtruderIndex >= settings.SamperIndex ||
+                    settings.SamperIndex >= settings.OvenIndex ||
+                    settings.OvenIndex >= (settings.OvenIndex + settings.OvenSize) ||
+                    (settings.OvenIndex + settings.OvenSize) >= settings.ConveyorSize && 
+                    string.IsNullOrEmpty(errorMessage), 
+                "Invalid component placement"
+            );
+
+            errorMessage += GetErrorMessage(throws,
+                    settings.OvenMaxTemp <= settings.OvenMinTemp ||
+                    settings.OvenMaxTemp <= 0 ||
+                    settings.OvenMinTemp <= 0 ||
+                    settings.OvenHeatingRate <= 0 ||
+                    settings.OvenCoolingRate <= 0 &&
+                    string.IsNullOrEmpty(errorMessage),
+                "Invalid oven temperature settings placement"
+            );
 
             throw new NotImplementedException();
         }
