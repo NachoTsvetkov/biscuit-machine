@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiscuitMaker.Managers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,9 +7,9 @@ namespace BiscuitMaker
 {
     public static class BiscuitMakerFactory
     {
-        public static BiscuitMaker Create(BiscuitMakerSettings settings)
+        public static BiscuitMaker Create(BiscuitMakerSettings settings = null)
         {
-            var settingsAreValid = settings.AreValid(false);
+            var settingsAreValid = BiscuitMakerSettingsManager.AreValid(settings, false);
 
             if (!settingsAreValid)
             {
@@ -27,30 +28,23 @@ namespace BiscuitMaker
             biscuitMaker.Components.Add(stateSwitch);
 
             var oven = new Oven();
-            stateSwitch.OnSwitchOn += oven.OnSwitchOn;
-            stateSwitch.OnSwitchOff += oven.OnSwitchOff;
-            clock.OnClockTick += oven.OnClockTick;
+            stateSwitch.OnSwitchOn += OvenManager.OnSwitchOn;
+            stateSwitch.OnSwitchOff += OvenManager.OnSwitchOff;
+            clock.OnClockTick += OvenManager.OnClockTick;
             biscuitMaker.Components.Add(oven);
 
             var motor = new Motor();
-            oven.OnWorkingTempReached += motor.OnWorkingTempReached;
-            stateSwitch.OnSwitchOn += motor.OnSwitchOn;
-            stateSwitch.OnSwitchOff += motor.OnSwitchOff;
-            stateSwitch.OnSwitchPause += motor.OnSwitchPause;
-            clock.OnClockTick += motor.OnClockTick;
+            oven.OnWorkingTempReached += MotorManager.OnWorkingTempReached;
+            stateSwitch.OnSwitchOn += MotorManager.OnSwitchOn;
+            stateSwitch.OnSwitchOff += MotorManager.OnSwitchOff;
+            stateSwitch.OnSwitchPause += MotorManager.OnSwitchPause;
+            clock.OnClockTick += MotorManager.OnClockTick;
             biscuitMaker.Components.Add(motor);
-
-            var extruder = new Extruder();
-            biscuitMaker.Components.Add(extruder);
-
-            var stamper = new Stamper();
-            biscuitMaker.Components.Add(stamper);
-
+            
             var bucket = new BiscuitBucket();
             biscuitMaker.Components.Add(bucket);
 
-            var conveyor = new Conveyor();
-            motor.OnPulse += conveyor.OnPulse();
+            var conveyor = Conveyor.CreateConveyor(settings.ConveyorSize);
             biscuitMaker.Components.Add(conveyor);
 
             return biscuitMaker;

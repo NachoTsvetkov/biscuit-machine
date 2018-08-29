@@ -1,8 +1,8 @@
 ﻿namespace BiscuitMaker
 {
-    public class Extruder : IBiscuitComponent
+    public static class Extruder
     {
-        public Biscuit Extrude()
+        public static Biscuit Extrude()
         {
             var biscuit = new Biscuit
             {
