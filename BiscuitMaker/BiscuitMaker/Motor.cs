@@ -25,5 +25,10 @@ namespace BiscuitMaker
         {
             throw new NotImplementedException();
         }
+
+        internal void OnClockTick(object sender, OnClockTickEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

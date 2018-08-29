@@ -19,6 +19,9 @@ namespace BiscuitMaker
             {
                 Components = new List<IBiscuitComponent>()
             };
+
+            var clock = new Clock();
+            biscuitMaker.Components.Add(clock);
             
             var stateSwitch = new Switch();
             biscuitMaker.Components.Add(stateSwitch);
@@ -26,6 +29,7 @@ namespace BiscuitMaker
             var oven = new Oven();
             stateSwitch.OnSwitchOn += oven.OnSwitchOn;
             stateSwitch.OnSwitchOff += oven.OnSwitchOff;
+            clock.OnClockTick += oven.OnClockTick;
             biscuitMaker.Components.Add(oven);
 
             var motor = new Motor();
@@ -33,14 +37,13 @@ namespace BiscuitMaker
             stateSwitch.OnSwitchOn += motor.OnSwitchOn;
             stateSwitch.OnSwitchOff += motor.OnSwitchOff;
             stateSwitch.OnSwitchPause += motor.OnSwitchPause;
+            clock.OnClockTick += motor.OnClockTick;
             biscuitMaker.Components.Add(motor);
 
             var extruder = new Extruder();
-            motor.OnPulse += biscuitMaker.OnPulse;
             biscuitMaker.Components.Add(extruder);
 
             var stamper = new Stamper();
-            motor.OnPulse += stamper.OnPulse;
             biscuitMaker.Components.Add(stamper);
 
             var bucket = new BiscuitBucket();
