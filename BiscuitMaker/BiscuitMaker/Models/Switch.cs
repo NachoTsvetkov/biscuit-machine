@@ -5,11 +5,15 @@ namespace BiscuitMaker
     public class Switch : IBiscuitComponent
     {
         public SwitchState State { get; set; }
-        
-        public event EventHandler<OnSwitchOnEventArgs> OnSwitchOn;
 
-        public event EventHandler<OnSwitchOffEventArgs> OnSwitchOff;
+        private Switch(SwitchState state)
+        {
+            this.State = state;
+        }
 
-        public event EventHandler<OnSwitchPauseEventArgs> OnSwitchPause;
+        public static Switch Create(SwitchState state = SwitchState.Off)
+        {
+            return new Switch(state);
+        }
     }
 }

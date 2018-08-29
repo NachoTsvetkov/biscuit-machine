@@ -15,18 +15,23 @@ namespace BiscuitMaker
             }
         }
 
-        private Conveyor(int count)
+        private Conveyor(List<Biscuit> belt)
         {
-            this.Belt = new List<Biscuit>();
-            for (int i = 0; i < count; i++)
-            {
-                this.Belt.Add(null);
-            }
+            this.Belt = belt;
         }
 
-        public static Conveyor CreateConveyor(int count)
+        public static Conveyor Create(List<Biscuit> belt = null, int count = 6)
         {
-            return new Conveyor(count);
+            if (belt == null)
+            {
+                belt = new List<Biscuit>();
+                for (int i = 0; i < count; i++)
+                {
+                    belt.Add(null);
+                }
+            }
+            
+            return new Conveyor(belt);
         }
     }
 }

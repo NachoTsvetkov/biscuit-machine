@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BiscuitMaker.Managers
 {
-    public static class MotorManager
+    public static class Motor
     {
         internal static void OnSwitchOn(object sender, OnSwitchOnEventArgs e)
         {

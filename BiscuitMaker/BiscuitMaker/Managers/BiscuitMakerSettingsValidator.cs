@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BiscuitMaker.Managers
 {
-    public static class BiscuitMakerSettingsManager
+    public static class BiscuitMakerSettingsValidator
     {
         internal static bool AreValid(BiscuitMakerSettings settings, bool throws = false)
         {

@@ -4,10 +4,7 @@
     {
         public static Biscuit Extrude()
         {
-            var biscuit = new Biscuit
-            {
-                IsExtruded = true
-            };
+            var biscuit = Biscuit.Create(isExtruded: true);
 
             return biscuit;
         }

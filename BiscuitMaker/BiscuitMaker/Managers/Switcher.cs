@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BiscuitMaker.Managers
 {
-    static class BiscuitMakerManager
+    class Switcher
     {
     }
 }

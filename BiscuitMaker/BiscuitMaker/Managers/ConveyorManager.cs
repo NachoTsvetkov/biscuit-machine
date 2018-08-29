@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BiscuitMaker.Managers
 {
-    class ConveyorManager
+    public static class ConveyorManager
     {
     }
 }
