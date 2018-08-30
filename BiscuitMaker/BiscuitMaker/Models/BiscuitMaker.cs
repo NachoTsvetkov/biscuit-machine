@@ -72,6 +72,14 @@ namespace BiscuitMaker
             }
         }
 
+        public Motor FirstMotor
+        {
+            get
+            {
+                return (Motor)this.Components.FirstOrDefault(x => x is Motor);
+            }
+        }
+
         private BiscuitMaker(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
         {
             this.Components = components;

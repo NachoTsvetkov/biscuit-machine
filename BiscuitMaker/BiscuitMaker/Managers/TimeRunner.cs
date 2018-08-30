@@ -10,9 +10,9 @@ namespace BiscuitMaker.Managers
     {
         public event EventHandler<OnClockTickEventArgs> RaiseClockTick;
 
-        public void Tick()
+        public void Tick(BiscuitMaker maker)
         {
-            this.RaiseClockTick?.Invoke(this, new OnClockTickEventArgs());
+            this.RaiseClockTick?.Invoke(this, new OnClockTickEventArgs { Maker = maker });
         }
     }
 }

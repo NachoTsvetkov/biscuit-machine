@@ -1,7 +1,8 @@
-﻿namespace BiscuitMaker
+﻿using BiscuitMaker.EventArgs;
+
+namespace BiscuitMaker
 {
-    public class OnSwitchOffEventArgs
+    public class OnSwitchOffEventArgs : EventArgsBase
     {
-        public BiscuitMaker Maker { get; set; }
     }
 }

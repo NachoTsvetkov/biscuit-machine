@@ -36,11 +36,15 @@ namespace BiscuitMaker
             var bucket = BiscuitBucket.Create();
             components.Add(bucket);
 
+            var motor = new Motor();
+            components.Add(motor);
+
             var biscuitMaker = BiscuitMaker.Create(components, settings);
             biscuitMaker.FirstSwitcher.RaiseSwitchOn += biscuitMaker.FirstOvenManager.HandleSiwtchOn;
             biscuitMaker.FirstSwitcher.RaiseSwitchOff += biscuitMaker.FirstOvenManager.HandleSiwtchOff;
             biscuitMaker.FirstTimeRunner.RaiseClockTick += biscuitMaker.FirstOvenManager.HandleClockTick;
 
+            biscuitMaker.FirstTimeRunner.RaiseClockTick += biscuitMaker.FirstMotor.HandleClockTick;
 
             return biscuitMaker;
         }

@@ -44,6 +44,7 @@
     <Compile Include="BiscuitMakerFactory.cs" />
     <Compile Include="Enumerations\OvenState.cs" />
     <Compile Include="Enumerations\SwitchState.cs" />
+    <Compile Include="EventArgs\EventArgsBase.cs" />
     <Compile Include="EventArgs\OnClockTickEventArgs.cs" />
     <Compile Include="EventArgs\OnMotorPulseEventArgs.cs" />
     <Compile Include="EventArgs\OnSwitchOffEventArgs.cs" />

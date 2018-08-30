@@ -22,34 +22,34 @@ namespace BiscuitMaker.Managers
         internal void TurnOn(BiscuitMaker maker)
         {
             Switcher.SetSwitch(maker, SwitchState.On);
-            this.SwitchOn();
+            this.SwitchOn(maker);
         }
 
         internal void TurnOff(BiscuitMaker maker)
         {
             Switcher.SetSwitch(maker, SwitchState.Off);
-            this.SwitchOff();
+            this.SwitchOff(maker);
         }
 
         internal void Pause(BiscuitMaker maker)
         {
             Switcher.SetSwitch(maker, SwitchState.Pause);
-            this.SwitchPause();
+            this.SwitchPause(maker);
         }
 
-        public void SwitchOn()
+        public void SwitchOn(BiscuitMaker maker)
         {
-            this.RaiseSwitchOn?.Invoke(this, new OnSwitchOnEventArgs());
+            this.RaiseSwitchOn?.Invoke(this, new OnSwitchOnEventArgs { Maker = maker });
         }
 
-        public void SwitchOff()
+        public void SwitchOff(BiscuitMaker maker)
         {
-            this.RaiseSwitchOff?.Invoke(this, new OnSwitchOffEventArgs());
+            this.RaiseSwitchOff?.Invoke(this, new OnSwitchOffEventArgs { Maker = maker });
         }
 
-        public void SwitchPause()
+        public void SwitchPause(BiscuitMaker maker)
         {
-            this.RaiseSwitchPause?.Invoke(this, new OnSwitchPauseEventArgs());
+            this.RaiseSwitchPause?.Invoke(this, new OnSwitchPauseEventArgs { Maker = maker });
         }
     }
 }

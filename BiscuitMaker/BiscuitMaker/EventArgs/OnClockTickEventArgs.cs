@@ -1,7 +1,8 @@
-﻿namespace BiscuitMaker
+﻿using BiscuitMaker.EventArgs;
+
+namespace BiscuitMaker
 {
-    public class OnClockTickEventArgs
+    public class OnClockTickEventArgs : EventArgsBase
     {
-        public BiscuitMaker Maker { get; set; }
     }
 }

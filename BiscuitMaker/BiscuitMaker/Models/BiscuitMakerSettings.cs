@@ -21,6 +21,9 @@ namespace BiscuitMaker
         public int OvenIndex { get; set; }
 
         public int OvenSize { get; set; }
-        public sbyte RoomTemperature { get; internal set; }
+
+        public int RoomTemperature { get; set; }
+
+        public int RevolutionsPerTick { get; set; }
     }
 }

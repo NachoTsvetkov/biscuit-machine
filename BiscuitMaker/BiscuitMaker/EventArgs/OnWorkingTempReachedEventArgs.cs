@@ -1,6 +1,8 @@
-﻿namespace BiscuitMaker
+﻿using BiscuitMaker.EventArgs;
+
+namespace BiscuitMaker
 {
-    public class OnWorkingTempReachedEventArgs
+    public class OnWorkingTempReachedEventArgs : EventArgsBase
     {
     }
 }
