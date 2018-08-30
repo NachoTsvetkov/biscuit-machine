@@ -15,7 +15,10 @@ namespace BiscuitMaker.Managers
 
         internal void HandleClockTick(object sender, OnClockTickEventArgs e)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < e.Maker.Settings.RevolutionsPerTick; i++)
+            {
+                this.Pulse();
+            }
         }
     }
 }
