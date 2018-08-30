@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BiscuitMaker.Managers
 {
-    public class TimeRunner
+    public class TimeRunner : IBiscuitComponent
     {
         public event EventHandler<OnClockTickEventArgs> RaiseClockTick;
 

@@ -39,6 +39,9 @@ namespace BiscuitMaker
             var motor = new Motor();
             components.Add(motor);
 
+            var timeRunner = new TimeRunner();
+            components.Add(timeRunner);
+
             var biscuitMaker = BiscuitMaker.Create(components, settings);
             biscuitMaker.FirstSwitcher.RaiseSwitchOn += biscuitMaker.FirstOvenManager.HandleSiwtchOn;
             biscuitMaker.FirstSwitcher.RaiseSwitchOff += biscuitMaker.FirstOvenManager.HandleSiwtchOff;
