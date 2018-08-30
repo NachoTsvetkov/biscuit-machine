@@ -32,6 +32,14 @@ namespace BiscuitMaker
             }
         }
 
+        public OvenManager FirstOvenManager
+        {
+            get
+            {
+                return (OvenManager)this.Components.FirstOrDefault(x => x is OvenManager);
+            }
+        }
+
         public BiscuitBucket FirstBucket
         {
             get
@@ -53,6 +61,14 @@ namespace BiscuitMaker
             get
             {
                 return (Switcher)this.Components.FirstOrDefault(x => x is Switcher);
+            }
+        }
+
+        public TimeRunner FirstTimeRunner
+        {
+            get
+            {
+                return (TimeRunner)this.Components.FirstOrDefault(x => x is TimeRunner);
             }
         }
 

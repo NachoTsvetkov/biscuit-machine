@@ -8,17 +8,17 @@ namespace BiscuitMaker.Managers
     {
         public static void TurnOn(BiscuitMaker maker)
         {
-            Switcher.TurnOn(maker);
+            maker.FirstSwitcher.TurnOn(maker);
         }
 
         public static void TurnOff(BiscuitMaker maker)
         {
-            Switcher.TurnOff(maker);
+            maker.FirstSwitcher.TurnOff(maker);
         }
 
         public static void Pause(BiscuitMaker maker)
         {
-            Switcher.Pause(maker);
+            maker.FirstSwitcher.Pause(maker);
         }
     }
 }

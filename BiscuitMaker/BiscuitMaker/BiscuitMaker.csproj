@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BiscuitMakerFactory.cs" />
+    <Compile Include="Enumerations\OvenState.cs" />
     <Compile Include="Enumerations\SwitchState.cs" />
     <Compile Include="EventArgs\OnClockTickEventArgs.cs" />
     <Compile Include="EventArgs\OnMotorPulseEventArgs.cs" />

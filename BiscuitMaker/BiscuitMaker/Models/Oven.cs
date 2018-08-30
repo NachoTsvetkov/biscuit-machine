@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiscuitMaker.Enumerations;
+using System;
 
 namespace BiscuitMaker
 {
@@ -24,22 +25,25 @@ namespace BiscuitMaker
         /// </summary>
         public int CoolingRate { get; private set; }
 
-        private Oven(int maxTemp, int minTemp, int heatingRate, int coolingRate)
+        /// <summary>
+        /// The Current Temperature of the oven
+        /// </summary>
+        public int CurrentTemperature { get; private set; }
+
+        /// <summary>
+        /// The Current Temperature of the oven
+        /// </summary>
+        public OvenState State { get; private set; }
+        
+        private Oven(int currentTemperature, OvenState state)
         {
-            this.MaxTemp = maxTemp;
-            this.MinTemp = minTemp;
-            this.HeatingRate = heatingRate;
-            this.CoolingRate = coolingRate;
+            this.CurrentTemperature = currentTemperature;
+            this.State = state;
         }
 
-        public static Oven Create(BiscuitMakerSettings settings)
+        public static Oven Create(int currentTemperature = 0, OvenState state = OvenState.Cooling)
         {
-            return new Oven(
-                settings.OvenMaxTemp,
-                settings.OvenMinTemp,
-                settings.OvenHeatingRate,
-                settings.OvenCoolingRate
-            );
+            return new Oven(currentTemperature, state);
         }
     }
 }
