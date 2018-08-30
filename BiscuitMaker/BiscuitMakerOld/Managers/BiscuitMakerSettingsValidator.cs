@@ -6,7 +6,7 @@ namespace BiscuitMaker.Managers
 {
     public static class BiscuitMakerSettingsValidator
     {
-        public static bool ValidateSettings(BiscuitMakerSettings settings, bool throws = false)
+        internal static bool AreValid(BiscuitMakerSettings settings, bool throws = false)
         {
             var errorMessage = "";
 
@@ -16,39 +16,32 @@ namespace BiscuitMaker.Managers
                 "Settings can not be null"
             );
 
-            errorMessage += GetErrorMessage(throws,
-                    string.IsNullOrEmpty(errorMessage) &&
-                    settings.ConveyorSize <= 2 + settings.OvenSize,
+            errorMessage += GetErrorMessage(throws, 
+                    settings.ConveyorSize <= 2 + settings.OvenSize && 
+                    string.IsNullOrEmpty(errorMessage),
                 "Conveyor too small"
             );
 
-            errorMessage += GetErrorMessage(throws,  
-                    string.IsNullOrEmpty(errorMessage) &&
-                    (settings.ExtruderIndex >= settings.SamperIndex ||
+            errorMessage += GetErrorMessage(throws, 
+                    settings.ExtruderIndex >= settings.SamperIndex ||
                     settings.SamperIndex >= settings.OvenIndex ||
                     settings.OvenIndex >= (settings.OvenIndex + settings.OvenSize) ||
-                    (settings.OvenIndex + settings.OvenSize) >= settings.ConveyorSize), 
+                    (settings.OvenIndex + settings.OvenSize) >= settings.ConveyorSize && 
+                    string.IsNullOrEmpty(errorMessage), 
                 "Invalid component placement"
             );
 
-            errorMessage += GetErrorMessage(throws, 
-                    string.IsNullOrEmpty(errorMessage) &&
-                    (settings.OvenMaxTemp <= settings.OvenMinTemp ||
+            errorMessage += GetErrorMessage(throws,
+                    settings.OvenMaxTemp <= settings.OvenMinTemp ||
                     settings.OvenMaxTemp <= 0 ||
                     settings.OvenMinTemp <= 0 ||
                     settings.OvenHeatingRate <= 0 ||
-                    settings.OvenCoolingRate <= 0),
-                "Invalid oven temperature settings"
+                    settings.OvenCoolingRate <= 0 &&
+                    string.IsNullOrEmpty(errorMessage),
+                "Invalid oven temperature settings placement"
             );
 
-            if (string.IsNullOrEmpty(errorMessage))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            throw new NotImplementedException();
         }
 
         private static string GetErrorMessage(bool throws, bool predicate, string errorMessage)

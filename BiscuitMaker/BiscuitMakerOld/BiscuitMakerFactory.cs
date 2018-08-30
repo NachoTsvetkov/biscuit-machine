@@ -9,7 +9,7 @@ namespace BiscuitMaker
     {
         public static BiscuitMaker Create(BiscuitMakerSettings settings = null)
         {
-            var settingsAreValid = BiscuitMakerSettingsValidator.ValidateSettings(settings, false);
+            var settingsAreValid = BiscuitMakerSettingsValidator.AreValid(settings, false);
 
             if (!settingsAreValid)
             {

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMaker", "BiscuitMaker\BiscuitMaker.csproj", "{2FAEED77-78A8-4B77-8F6C-D6C5EA6B3DCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMaker.Tests", "BiscuitMaker.Tests\BiscuitMaker.Tests.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMaker", "BiscuitMaker\BiscuitMaker.csproj", "{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2FAEED77-78A8-4B77-8F6C-D6C5EA6B3DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FAEED77-78A8-4B77-8F6C-D6C5EA6B3DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FAEED77-78A8-4B77-8F6C-D6C5EA6B3DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FAEED77-78A8-4B77-8F6C-D6C5EA6B3DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDF4429-251A-416D-BB68-93F227191BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
