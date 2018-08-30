@@ -6,26 +6,6 @@ namespace BiscuitMaker
     public class Oven : IBiscuitComponent
     {
         /// <summary>
-        /// Maximum temperature in celsius
-        /// </summary>
-        public int MaxTemp { get; private set; }
-
-        /// <summary>
-        /// Minimum temperature in celsius
-        /// </summary>
-        public int MinTemp { get; private set; }
-
-        /// <summary>
-        /// Heating rate degrees celsius per tick
-        /// </summary>
-        public int HeatingRate { get; private set; }
-
-        /// <summary>
-        /// Cooling rate degrees celsius per tick
-        /// </summary>
-        public int CoolingRate { get; private set; }
-
-        /// <summary>
         /// The Current Temperature of the oven
         /// </summary>
         public int CurrentTemperature { get; private set; }
@@ -34,16 +14,22 @@ namespace BiscuitMaker
         /// The Current Temperature of the oven
         /// </summary>
         public OvenState State { get; private set; }
-        
-        private Oven(int currentTemperature, OvenState state)
+
+        /// <summary>
+        /// If the oven is in the working temperature
+        /// </summary>
+        public bool IsWorkingTemperature { get; private set; }
+
+        private Oven(int currentTemperature, OvenState state, bool isWorkingTemperature)
         {
             this.CurrentTemperature = currentTemperature;
             this.State = state;
+            this.IsWorkingTemperature = IsWorkingTemperature;
         }
 
-        public static Oven Create(int currentTemperature = 0, OvenState state = OvenState.Cooling)
+        public static Oven Create(int currentTemperature = 0, OvenState state = OvenState.Cooling, bool isWorkingTemperature = false)
         {
-            return new Oven(currentTemperature, state);
+            return new Oven(currentTemperature, state, isWorkingTemperature);
         }
     }
 }

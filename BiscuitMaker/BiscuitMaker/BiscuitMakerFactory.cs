@@ -45,6 +45,7 @@ namespace BiscuitMaker
             biscuitMaker.FirstTimeRunner.RaiseClockTick += biscuitMaker.FirstOvenManager.HandleClockTick;
 
             biscuitMaker.FirstTimeRunner.RaiseClockTick += biscuitMaker.FirstMotor.HandleClockTick;
+            biscuitMaker.FirstMotor.RaisePulse += 
 
             return biscuitMaker;
         }

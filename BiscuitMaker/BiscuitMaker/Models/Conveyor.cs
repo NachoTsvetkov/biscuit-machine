@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BiscuitMaker
 {
@@ -12,6 +13,14 @@ namespace BiscuitMaker
             get
             {
                 return this.Belt.Count;
+            }
+        }
+
+        public bool HasBiscuits
+        {
+            get
+            {
+                return this.Belt.Any(x => x != null);
             }
         }
 

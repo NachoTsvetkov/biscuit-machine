@@ -16,7 +16,10 @@ namespace BiscuitMaker.Managers
 
         public static void SetState(BiscuitMaker maker, int currentTemperature, OvenState state)
         {
-            var newOven = Oven.Create(currentTemperature, state);
+            var isWorkingTemperature = currentTemperature < maker.Settings.OvenMaxTemp &&
+                currentTemperature >= maker.Settings.OvenMinTemp;
+
+            var newOven = Oven.Create(currentTemperature, state, isWorkingTemperature);
             maker.Components.Remove(maker.FirstOven);
             maker.Components.Add(newOven);
         }
@@ -28,19 +31,21 @@ namespace BiscuitMaker.Managers
 
         internal void HandleSiwtchOff(object sender, OnSwitchOffEventArgs e)
         {
-            OvenManager.SetState(e.Maker, e.Maker.FirstOven.CurrentTemperature, OvenState.Off);
         }
 
         internal void HandleClockTick(object sender, OnClockTickEventArgs e)
         {
             var settings = e.Maker.Settings;
             var oven = e.Maker.FirstOven;
+            var button = e.Maker.FirstSwitch;
+            var conveyor = e.Maker.FirstConveyor;
 
             var newTemperature = 0;
             var heatPeak = 0;
+            var state = button.State == SwitchState.Off && !conveyor.HasBiscuits ? OvenState.Off : oven.State;
             var newState = oven.State;
 
-            switch (oven.State)
+            switch (state)
             {
                 case OvenState.Heating:
                     heatPeak = oven.CurrentTemperature + settings.OvenHeatingRate;
