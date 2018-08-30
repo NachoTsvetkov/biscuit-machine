@@ -16,7 +16,7 @@ namespace BiscuitMaker
 
         public int ExtruderIndex { get; set; }
 
-        public int SamperIndex { get; set; }
+        public int StamperIndex { get; set; }
 
         public int OvenIndex { get; set; }
 

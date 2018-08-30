@@ -24,8 +24,8 @@ namespace BiscuitMaker.Managers
 
             errorMessage += GetErrorMessage(throws,  
                     string.IsNullOrEmpty(errorMessage) &&
-                    (settings.ExtruderIndex >= settings.SamperIndex ||
-                    settings.SamperIndex >= settings.OvenIndex ||
+                    (settings.ExtruderIndex >= settings.StamperIndex ||
+                    settings.StamperIndex >= settings.OvenIndex ||
                     settings.OvenIndex >= (settings.OvenIndex + settings.OvenSize) ||
                     (settings.OvenIndex + settings.OvenSize) >= settings.ConveyorSize), 
                 "Invalid component placement"

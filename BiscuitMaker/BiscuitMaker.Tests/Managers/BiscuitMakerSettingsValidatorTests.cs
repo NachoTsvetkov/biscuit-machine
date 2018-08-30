@@ -25,7 +25,7 @@ namespace BiscuitMaker.Tests.Managers
                 OvenMaxTemp = 240,
                 OvenMinTemp = 220,
                 OvenSize = 2,
-                SamperIndex = 1,
+                StamperIndex = 1,
             };
 
             Action action = () => BiscuitMakerSettingsValidator.ValidateSettings(settings);
@@ -54,7 +54,7 @@ namespace BiscuitMaker.Tests.Managers
                 OvenMaxTemp = 240,
                 OvenMinTemp = 220,
                 OvenSize = 2,
-                SamperIndex = 1,
+                StamperIndex = 1,
             };
 
             Action action = () => BiscuitMakerSettingsValidator.ValidateSettings(settings, true);
@@ -74,7 +74,7 @@ namespace BiscuitMaker.Tests.Managers
                 OvenMaxTemp = 240,
                 OvenMinTemp = 220,
                 OvenSize = 2,
-                SamperIndex = 1,
+                StamperIndex = 1,
             };
 
             Action action = () => BiscuitMakerSettingsValidator.ValidateSettings(settings, true);
@@ -94,7 +94,7 @@ namespace BiscuitMaker.Tests.Managers
                 OvenMaxTemp = 220,
                 OvenMinTemp = 240,
                 OvenSize = 2,
-                SamperIndex = 1,
+                StamperIndex = 1,
             };
 
             Action action = () => BiscuitMakerSettingsValidator.ValidateSettings(settings, true);

@@ -8,9 +8,9 @@ namespace BiscuitMaker.Managers
     {
         public event EventHandler<OnMotorPulseEventArgs> RaisePulse;
 
-        public void Pulse()
+        public void Pulse(BiscuitMaker maker)
         {
-            this.RaisePulse?.Invoke(this, new OnMotorPulseEventArgs());
+            this.RaisePulse?.Invoke(this, new OnMotorPulseEventArgs { Maker = maker });
         }
 
         internal void HandleClockTick(object sender, OnClockTickEventArgs e)
@@ -24,7 +24,7 @@ namespace BiscuitMaker.Managers
 
             for (int i = 0; i < e.Maker.Settings.RevolutionsPerTick; i++)
             {
-                this.Pulse();
+                this.Pulse(e.Maker);
             }
         }
     }

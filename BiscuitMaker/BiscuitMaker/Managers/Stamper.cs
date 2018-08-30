@@ -6,6 +6,11 @@ namespace BiscuitMaker
     {
         public static Biscuit Stamp(Biscuit biscuit)
         {
+            if (biscuit == null)
+            {
+                return null;
+            }
+
             var newBiscuit = Biscuit.Create(
                 isExtruded: biscuit.IsExtruded,
                 isStamped: true,

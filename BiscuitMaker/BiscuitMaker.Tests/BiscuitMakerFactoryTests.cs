@@ -31,7 +31,7 @@ namespace BiscuitMaker.Tests
                 OvenMaxTemp = 240,
                 OvenMinTemp = 220,
                 OvenSize = 2,
-                SamperIndex = 1,
+                StamperIndex = 1,
             };
 
             Action create = () => BiscuitMakerFactory.Create(settings);
