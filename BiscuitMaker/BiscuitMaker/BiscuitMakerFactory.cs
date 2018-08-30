@@ -21,6 +21,9 @@ namespace BiscuitMaker
             var switchComponent = Switch.Create();
             components.Add(switchComponent);
 
+            var switcher = new Switcher();
+            components.Add(switcher);
+
             var conveyor = Conveyor.Create(count: settings.ConveyorSize);
             components.Add(conveyor);
 
@@ -29,7 +32,7 @@ namespace BiscuitMaker
 
             var bucket = BiscuitBucket.Create();
             components.Add(bucket);
-            
+
             var biscuitMaker = BiscuitMaker.Create(components, settings);
             
             return biscuitMaker;

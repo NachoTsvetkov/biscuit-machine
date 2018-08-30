@@ -4,21 +4,13 @@ using System.Text;
 
 namespace BiscuitMaker.Managers
 {
-    public static class OvenManager
+    public class OvenManager
     {
-        internal static void OnSwitchOff(object sender, OnSwitchOffEventArgs e)
+        public event EventHandler<OnWorkingTempReachedEventArgs> RaiseWorkingTempReached;
+        
+        public void ReachWorkingTemp()
         {
-            throw new NotImplementedException();
-        }
-
-        internal static void OnSwitchOn(object sender, OnSwitchOnEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal static void OnClockTick(object sender, OnClockTickEventArgs e)
-        {
-            throw new NotImplementedException();
+            this.RaiseWorkingTempReached?.Invoke(this, new OnWorkingTempReachedEventArgs());
         }
     }
 }

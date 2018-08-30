@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BiscuitMaker.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,18 +8,6 @@ namespace BiscuitMaker
 {
     public class BiscuitMaker
     {
-        public event EventHandler<OnClockTickEventArgs> OnClockTick;
-
-        public event EventHandler<OnMotorPulseEventArgs> OnPulse;
-
-        public event EventHandler<OnWorkingTempReachedEventArgs> OnWorkingTempReached;
-
-        public event EventHandler<OnSwitchOnEventArgs> OnSwitchOn;
-
-        public event EventHandler<OnSwitchOffEventArgs> OnSwitchOff;
-
-        public event EventHandler<OnSwitchPauseEventArgs> OnSwitchPause;
-
         /// <summary>
         /// The components are not separate properties because the Biscuit Maker can have
         /// multiple Stampers, Switches, Conveyors etc. Just to make it more flexible
@@ -56,6 +45,14 @@ namespace BiscuitMaker
             get
             {
                 return (Switch)this.Components.FirstOrDefault(x => x is Switch);
+            }
+        }
+
+        public Switcher FirstSwitcher
+        {
+            get
+            {
+                return (Switcher)this.Components.FirstOrDefault(x => x is Switcher);
             }
         }
 

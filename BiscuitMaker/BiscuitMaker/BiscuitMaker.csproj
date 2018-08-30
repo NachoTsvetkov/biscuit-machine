@@ -58,6 +58,7 @@
     <Compile Include="Managers\OvenManager.cs" />
     <Compile Include="Managers\Stamper.cs" />
     <Compile Include="Managers\Switcher.cs" />
+    <Compile Include="Managers\TimeRunner.cs" />
     <Compile Include="Models\Biscuit.cs" />
     <Compile Include="Models\BiscuitBucket.cs" />
     <Compile Include="Models\BiscuitMaker.cs" />
