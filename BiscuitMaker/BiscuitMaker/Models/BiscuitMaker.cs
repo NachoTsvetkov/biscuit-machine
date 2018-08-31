@@ -32,14 +32,6 @@ namespace BiscuitMaker
             }
         }
 
-        public OvenManager FirstOvenManager
-        {
-            get
-            {
-                return (OvenManager)this.Components.FirstOrDefault(x => x is OvenManager);
-            }
-        }
-
         public BiscuitBucket FirstBucket
         {
             get

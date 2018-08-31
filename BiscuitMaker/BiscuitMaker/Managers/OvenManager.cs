@@ -5,15 +5,8 @@ using System.Text;
 
 namespace BiscuitMaker.Managers
 {
-    public class OvenManager : IBiscuitComponent
-    {
-        public event EventHandler<OnWorkingTempReachedEventArgs> RaiseWorkingTempReached;
-        
-        public void ReachWorkingTemp()
-        {
-            this.RaiseWorkingTempReached?.Invoke(this, new OnWorkingTempReachedEventArgs());
-        }
-
+    public static class OvenManager
+    {   
         public static void SetState(BiscuitMaker maker, int currentTemperature, OvenState state)
         {
             var isWorkingTemperature = currentTemperature < maker.Settings.OvenMaxTemp &&
@@ -24,16 +17,12 @@ namespace BiscuitMaker.Managers
             maker.Components.Add(newOven);
         }
 
-        internal void HandleSiwtchOn(object sender, OnSwitchOnEventArgs e)
+        public static void HandleSiwtchOn(object sender, OnSwitchOnEventArgs e)
         {
             OvenManager.SetState(e.Maker, e.Maker.FirstOven.CurrentTemperature, OvenState.Heating);
         }
 
-        internal void HandleSiwtchOff(object sender, OnSwitchOffEventArgs e)
-        {
-        }
-
-        internal void HandleClockTick(object sender, OnClockTickEventArgs e)
+        public static void HandleClockTick(object sender, OnClockTickEventArgs e)
         {
             var settings = e.Maker.Settings;
             var oven = e.Maker.FirstOven;
@@ -69,6 +58,7 @@ namespace BiscuitMaker.Managers
                 case OvenState.Off:
                     heatPeak = oven.CurrentTemperature - settings.OvenCoolingRate;
                     newTemperature = Math.Max(heatPeak, settings.RoomTemperature);
+                    newState = OvenState.Off;
                     break;
                 default:
                     throw new ArgumentException("Unknown Oven State");

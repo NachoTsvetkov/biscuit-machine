@@ -27,11 +27,8 @@ namespace BiscuitMaker
             var conveyor = Conveyor.Create(count: settings.ConveyorSize);
             components.Add(conveyor);
 
-            var oven = Oven.Create();
+            var oven = Oven.Create(settings.RoomTemperature);
             components.Add(oven);
-
-            var ovenManager = new OvenManager();
-            components.Add(ovenManager);
 
             var bucket = BiscuitBucket.Create();
             components.Add(bucket);
@@ -43,9 +40,8 @@ namespace BiscuitMaker
             components.Add(timeRunner);
 
             var biscuitMaker = BiscuitMaker.Create(components, settings);
-            biscuitMaker.FirstSwitcher.RaiseSwitchOn += biscuitMaker.FirstOvenManager.HandleSiwtchOn;
-            biscuitMaker.FirstSwitcher.RaiseSwitchOff += biscuitMaker.FirstOvenManager.HandleSiwtchOff;
-            biscuitMaker.FirstTimeRunner.RaiseClockTick += biscuitMaker.FirstOvenManager.HandleClockTick;
+            biscuitMaker.FirstSwitcher.RaiseSwitchOn += OvenManager.HandleSiwtchOn;
+            biscuitMaker.FirstTimeRunner.RaiseClockTick += OvenManager.HandleClockTick;
 
             biscuitMaker.FirstTimeRunner.RaiseClockTick += biscuitMaker.FirstMotor.HandleClockTick;
             biscuitMaker.FirstMotor.RaisePulse += ConveyorManager.HandleMotorPulse;

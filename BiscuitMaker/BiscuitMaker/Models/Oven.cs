@@ -27,7 +27,7 @@ namespace BiscuitMaker
             this.IsWorkingTemperature = isWorkingTemperature;
         }
 
-        public static Oven Create(int currentTemperature = 0, OvenState state = OvenState.Cooling, bool isWorkingTemperature = false)
+        public static Oven Create(int currentTemperature = 0, OvenState state = OvenState.Off, bool isWorkingTemperature = false)
         {
             return new Oven(currentTemperature, state, isWorkingTemperature);
         }
