@@ -19,19 +19,19 @@ namespace BiscuitMaker.Managers
             maker.Components.Add(newSwitch);
         }
 
-        internal void TurnOn(BiscuitMaker maker)
+        public void TurnOn(BiscuitMaker maker)
         {
             Switcher.SetSwitch(maker, SwitchState.On);
             this.SwitchOn(maker);
         }
 
-        internal void TurnOff(BiscuitMaker maker)
+        public void TurnOff(BiscuitMaker maker)
         {
             Switcher.SetSwitch(maker, SwitchState.Off);
             this.SwitchOff(maker);
         }
 
-        internal void Pause(BiscuitMaker maker)
+        public void Pause(BiscuitMaker maker)
         {
             Switcher.SetSwitch(maker, SwitchState.Pause);
             this.SwitchPause(maker);
