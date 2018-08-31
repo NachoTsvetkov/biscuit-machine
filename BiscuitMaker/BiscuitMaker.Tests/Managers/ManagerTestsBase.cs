@@ -3,7 +3,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    internal class ManagerTestsBase
+    public class ManagerTestsBase
     {
         static readonly BiscuitMakerSettings settings = new BiscuitMakerSettings
         {

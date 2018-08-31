@@ -13,9 +13,10 @@ namespace BiscuitMaker.Managers
             this.RaisePulse?.Invoke(this, new OnMotorPulseEventArgs { Maker = maker });
         }
 
-        internal void HandleClockTick(object sender, OnClockTickEventArgs e)
+        public void HandleClockTick(object sender, OnClockTickEventArgs e)
         {
-            var canPulse = e.Maker.FirstOven.IsWorkingTemperature || e.Maker.FirstConveyor.HasBiscuits;
+            var canPulse = (e.Maker.FirstSwitch.State == SwitchState.On && e.Maker.FirstOven.IsWorkingTemperature) || 
+                    (e.Maker.FirstSwitch.State == SwitchState.Off && e.Maker.FirstConveyor.HasBiscuits);
 
             if (!canPulse)
             {
