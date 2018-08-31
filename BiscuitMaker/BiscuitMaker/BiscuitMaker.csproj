@@ -74,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EventArgs\EventArgs.txt" />
     <Content Include="Interfaces\Interfaces.txt" />
     <Content Include="Managers\Managers.txt" />
     <Content Include="Models\Models.txt" />

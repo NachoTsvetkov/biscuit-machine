@@ -1,0 +1,4 @@
+﻿In ideal world interfaces would be implemented on top of all the functional classes 
+and functionality will be mocked (I prefer Moq)
+
+Also tests for the creation of the models would be set as well.

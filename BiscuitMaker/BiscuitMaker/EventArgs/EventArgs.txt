@@ -1,0 +1,4 @@
+﻿Event arguments specific for every event are more or less not needed for this case, 
+however it showcases how if complexity grows things can be handled.
+
+Also in ideal world I wont give the whole Maker as an argument, but rather just what is needed
