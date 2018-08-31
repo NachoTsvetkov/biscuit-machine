@@ -1,5 +1,7 @@
-﻿namespace BiscuitMaker
+﻿namespace BiscuitMaker.Managers
 {
+    using BiscuitMaker.Models;
+
     public static class Extruder
     {
         public static Biscuit Extrude()

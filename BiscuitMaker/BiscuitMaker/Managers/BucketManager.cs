@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BiscuitMaker.Managers
+﻿namespace BiscuitMaker.Managers
 {
+    using BiscuitMaker.Models;
+    using System.Linq;
+
     public class BucketManager
     {
         public static void HandleMotorPulse(object sender, OnMotorPulseEventArgs e)

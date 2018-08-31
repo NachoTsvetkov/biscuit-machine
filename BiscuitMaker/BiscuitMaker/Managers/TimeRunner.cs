@@ -1,7 +1,6 @@
 ﻿namespace BiscuitMaker.Managers
 {
     using System;
-
     using BiscuitMaker.Models;
 
     public class TimeRunner : IBiscuitComponent

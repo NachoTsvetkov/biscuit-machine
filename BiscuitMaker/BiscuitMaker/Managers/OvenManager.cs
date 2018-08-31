@@ -1,5 +1,4 @@
-﻿
-namespace BiscuitMaker.Managers
+﻿namespace BiscuitMaker.Managers
 {
     using System;
 

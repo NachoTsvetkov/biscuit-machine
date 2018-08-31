@@ -2,6 +2,7 @@
 namespace BiscuitMaker.Tests.Managers
 {
     using BiscuitMaker.Managers;
+    using BiscuitMaker.Models;
     using FluentAssertions;
     using NUnit.Framework;
     using System;

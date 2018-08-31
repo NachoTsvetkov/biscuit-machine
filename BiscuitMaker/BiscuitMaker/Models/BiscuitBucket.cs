@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace BiscuitMaker
+﻿namespace BiscuitMaker.Models
 {
+    using System.Collections.Generic;
+
     public class BiscuitBucket : IBiscuitComponent
     {
         public List<Biscuit> Biscuits { get; private set; }

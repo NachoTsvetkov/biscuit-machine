@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace BiscuitMaker
+﻿namespace BiscuitMaker.Models
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+
     public class Conveyor : IBiscuitComponent
     {
         public List<Biscuit> Belt { get; private set; }

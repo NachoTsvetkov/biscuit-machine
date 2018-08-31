@@ -1,8 +1,7 @@
-﻿using BiscuitMaker.Enumerations;
-using System;
-
-namespace BiscuitMaker
+﻿namespace BiscuitMaker
 {
+    using BiscuitMaker.Enumerations;
+
     public class Oven : IBiscuitComponent
     {
         /// <summary>

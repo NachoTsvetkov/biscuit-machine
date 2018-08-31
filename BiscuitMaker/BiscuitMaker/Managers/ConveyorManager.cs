@@ -1,7 +1,7 @@
-﻿using System.Linq;
-
-namespace BiscuitMaker.Managers
+﻿namespace BiscuitMaker.Managers
 {
+    using BiscuitMaker.Models;
+
     public static class ConveyorManager
     {
         public static void HandleMotorPulse(object sender, OnMotorPulseEventArgs e)

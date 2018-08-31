@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BiscuitMaker
+﻿namespace BiscuitMaker.Models
 {
     public class BiscuitMakerSettings
     {

@@ -1,10 +1,8 @@
-﻿using BiscuitMaker.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BiscuitMaker.Managers
+﻿namespace BiscuitMaker.Managers
 {
+    using System;
+    using BiscuitMaker.Models;
+
     public class Motor : IBiscuitComponent
     {
         public event EventHandler<OnMotorPulseEventArgs> RaisePulse;

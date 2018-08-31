@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-
-namespace BiscuitMaker
+﻿namespace BiscuitMaker.Managers
 {
+    using System.Linq;
+    using BiscuitMaker.Models;
+
     public static class Stamper
     {
         public static Biscuit Stamp(Biscuit biscuit)

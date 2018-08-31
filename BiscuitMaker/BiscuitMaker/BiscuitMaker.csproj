@@ -67,7 +67,6 @@
     <Compile Include="Models\BiscuitBucket.cs" />
     <Compile Include="Models\BiscuitMakerObject.cs" />
     <Compile Include="Models\BiscuitMakerSettings.cs" />
-    <Compile Include="Models\Clock.cs" />
     <Compile Include="Models\Conveyor.cs" />
     <Compile Include="Models\Oven.cs" />
     <Compile Include="Models\Switch.cs" />

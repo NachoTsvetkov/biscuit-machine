@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BiscuitMaker.Managers
+﻿namespace BiscuitMaker.Managers
 {
+    using System;
+    using BiscuitMaker.Models;
+
     public static class BiscuitMakerSettingsValidator
     {
         public static bool ValidateSettings(BiscuitMakerSettings settings, bool throws = false)
