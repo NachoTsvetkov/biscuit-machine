@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +57,7 @@
     <Compile Include="Managers\BiscuitMakerManager.cs" />
     <Compile Include="Managers\BiscuitMakerSettingsValidator.cs" />
     <Compile Include="Managers\BucketManager.cs" />
+    <Compile Include="Managers\BiscuitMakerSettingsLoader.cs" />
     <Compile Include="Managers\ConveyorManager.cs" />
     <Compile Include="Managers\Extruder.cs" />
     <Compile Include="Managers\Motor.cs" />

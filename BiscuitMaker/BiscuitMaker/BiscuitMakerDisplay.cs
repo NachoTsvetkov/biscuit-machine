@@ -34,5 +34,21 @@
                 return this.Maker.FirstBucket;
             }
         }
+
+        public Switch Switch
+        {
+            get
+            {
+                return this.Maker.FirstSwitch;
+            }
+        }
+
+        public Oven Oven
+        {
+            get
+            {
+                return this.Maker.FirstOven;
+            }
+        }
     }
 }

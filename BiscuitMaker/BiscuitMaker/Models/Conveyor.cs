@@ -16,6 +16,14 @@
             }
         }
 
+        public int Count
+        {
+            get
+            {
+                return this.Belt.Count(x => x != null);
+            }
+        }
+
         private Conveyor(List<Biscuit> belt)
         {
             this.Belt = belt;
