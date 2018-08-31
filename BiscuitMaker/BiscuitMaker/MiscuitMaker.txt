@@ -1,1 +1,2 @@
 ﻿This is basic first version implementation. It can be improved upon given time in multple directions.
+In Ideal world dependance injection should be implemented.

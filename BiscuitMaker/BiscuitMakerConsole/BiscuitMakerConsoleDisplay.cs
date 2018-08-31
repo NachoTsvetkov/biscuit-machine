@@ -17,9 +17,7 @@
         {
             Console.Clear();
 
-            this.RenderExtruder();
-            this.RenderStamper();
-            this.RenderOven(); 
+            this.RenderUtils();
             this.RenderBisquits();
             this.RenderBeltFrame();
 
@@ -28,6 +26,37 @@
             this.RenderSettigns();
             this.RenderMenu();
 
+        }
+
+        private void RenderUtils()
+        {
+            var utils = new StringBuilder(Margin);
+
+            //Render Extruder
+            FillWithWhiteSpace(utils, 0, this.Settings.ExtruderIndex);
+            utils.Append("e");
+
+            //Render Stamper
+            FillWithWhiteSpace(utils, this.Settings.ExtruderIndex + 1, this.Settings.StamperIndex);
+            utils.Append("s");
+
+            //Render Stamper
+            FillWithWhiteSpace(utils, this.Settings.StamperIndex + 1, this.Settings.OvenIndex);
+            
+            for (int i = 0; i < this.Settings.OvenSize; i++)
+            {
+                utils.Append("_");
+            }
+
+            Console.WriteLine(utils);
+        }
+
+        private void FillWithWhiteSpace(StringBuilder utils,int from, int to)
+        {
+            for (int i = from; i < to; i++)
+            {
+                utils.Append(" ");
+            }
         }
 
         private void RenderStamper()
@@ -90,6 +119,8 @@
             {
                 beltFrame.Append("-");
             }
+
+            beltFrame.Append($"|{ this.Bucket.Biscuits.Count}|");
 
             Console.WriteLine(beltFrame);
         }
