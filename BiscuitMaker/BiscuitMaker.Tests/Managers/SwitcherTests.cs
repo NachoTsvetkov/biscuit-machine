@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BiscuitMaker.Tests.Managers
 {
     [TestFixture]
-    class SwitcherTests : ManagerTestsBase
+    class SwitcherTests : TestsBase
     {
         [Test]
         public void SwitchOnTest()

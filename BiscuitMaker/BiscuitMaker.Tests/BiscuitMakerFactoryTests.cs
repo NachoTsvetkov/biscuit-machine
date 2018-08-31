@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace BiscuitMaker.Tests
 {
     [TestFixture]
-    public class BiscuitMakerFactoryTests
+    public class BiscuitMakerFactoryTests : TestsBase
     {
         [Test]
         public void CreateWithNoSettingsTest()
@@ -19,23 +19,15 @@ namespace BiscuitMaker.Tests
         }
 
         [Test]
-        public void CreateWithValidSettingsTest()
+        public void MakerPropertiesBuildTest()
         {
-            var settings = new BiscuitMakerSettings
-            {
-                ConveyorSize = 6,
-                ExtruderIndex = 0,
-                OvenCoolingRate = 10,
-                OvenHeatingRate = 10,
-                OvenIndex = 3,
-                OvenMaxTemp = 240,
-                OvenMinTemp = 220,
-                OvenSize = 2,
-                StamperIndex = 1,
-            };
-
-            Action create = () => BiscuitMakerFactory.Create(settings);
-            create.Should().NotThrow();
+            this.Maker.FirstBucket.Should().NotBeNull();
+            this.Maker.FirstConveyor.Should().NotBeNull();
+            this.Maker.FirstMotor.Should().NotBeNull();
+            this.Maker.FirstOven.Should().NotBeNull();
+            this.Maker.FirstSwitch.Should().NotBeNull();
+            this.Maker.FirstSwitcher.Should().NotBeNull();
+            this.Maker.FirstTimeRunner.Should().NotBeNull();
         }
     }
 }

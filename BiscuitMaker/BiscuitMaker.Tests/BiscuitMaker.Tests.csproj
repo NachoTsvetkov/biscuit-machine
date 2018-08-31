@@ -54,7 +54,7 @@
     <Compile Include="Managers\BucketManagerTests.cs" />
     <Compile Include="Managers\ConveyorManagerTests.cs" />
     <Compile Include="Managers\ExtruderTests.cs" />
-    <Compile Include="Managers\ManagerTestsBase.cs" />
+    <Compile Include="TestsBase.cs" />
     <Compile Include="Managers\MotorTests.cs" />
     <Compile Include="Managers\OvenManagerTests.cs" />
     <Compile Include="Managers\StamperTests.cs" />

@@ -1,9 +1,9 @@
-﻿namespace BiscuitMaker.Tests.Managers
+﻿namespace BiscuitMaker.Tests
 {
     using NUnit.Framework;
 
     [TestFixture]
-    public class ManagerTestsBase
+    public class TestsBase
     {
         static readonly BiscuitMakerSettings settings = new BiscuitMakerSettings
         {

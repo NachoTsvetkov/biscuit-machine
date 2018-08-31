@@ -9,7 +9,7 @@ namespace BiscuitMaker.Managers
     {   
         public static void SetState(BiscuitMaker maker, int currentTemperature, OvenState state)
         {
-            var isWorkingTemperature = currentTemperature < maker.Settings.OvenMaxTemp &&
+            var isWorkingTemperature = currentTemperature <= maker.Settings.OvenMaxTemp &&
                 currentTemperature >= maker.Settings.OvenMinTemp;
 
             var newOven = Oven.Create(currentTemperature, state, isWorkingTemperature);
@@ -19,7 +19,10 @@ namespace BiscuitMaker.Managers
 
         public static void HandleSiwtchOn(object sender, OnSwitchOnEventArgs e)
         {
-            OvenManager.SetState(e.Maker, e.Maker.FirstOven.CurrentTemperature, OvenState.Heating);
+            if (e.Maker.FirstOven.State == OvenState.Off)
+            {
+                OvenManager.SetState(e.Maker, e.Maker.FirstOven.CurrentTemperature, OvenState.Heating);
+            }
         }
 
         public static void HandleClockTick(object sender, OnClockTickEventArgs e)

@@ -6,7 +6,7 @@ using System.Linq;
 namespace BiscuitMaker.Tests.Managers
 {
     [TestFixture]
-    class ExtruderTests : ManagerTestsBase
+    class ExtruderTests : TestsBase
     {
         [Test]
         public void ExtrudeTest()

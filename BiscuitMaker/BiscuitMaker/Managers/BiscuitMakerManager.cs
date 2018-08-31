@@ -20,5 +20,10 @@ namespace BiscuitMaker.Managers
         {
             maker.FirstSwitcher.Pause(maker);
         }
+
+        public static void Tick(BiscuitMaker maker)
+        {
+            maker.FirstTimeRunner.Tick(maker);
+        }
     }
 }

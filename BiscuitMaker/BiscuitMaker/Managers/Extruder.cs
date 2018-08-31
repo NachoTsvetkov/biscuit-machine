@@ -11,6 +11,11 @@
         
         public static void HandleMotorPulse(object sender, OnMotorPulseEventArgs e)
         {
+            if (e.Maker.FirstSwitch.State != SwitchState.On)
+            {
+                return;
+            }
+
             var conveyor = e.Maker.FirstConveyor;
             var extruderIndex = e.Maker.Settings.ExtruderIndex;
             var biscuit = Extruder.Extrude();

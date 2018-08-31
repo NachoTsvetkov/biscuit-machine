@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace BiscuitMaker.Tests.Managers
 {
     [TestFixture]
-    class OvenManagerTests : ManagerTestsBase
+    class OvenManagerTests : TestsBase
     {
         [Test]
         public void SetStateTest()

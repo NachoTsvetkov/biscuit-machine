@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BiscuitMaker.Tests.Managers
 {
     [TestFixture]
-    class ConveyorManagerTests : ManagerTestsBase
+    class ConveyorManagerTests : TestsBase
     {
         [Test]
         public void HandleOneMotorPulseTest()

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace BiscuitMaker.Tests.Managers
 {
     [TestFixture]
-    public class MotorTests : ManagerTestsBase
+    public class MotorTests : TestsBase
     {
         [Test]
         public void PulseTest()

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BiscuitMaker.Tests.Managers
 {
     [TestFixture]
-    class TimeRunnerTests : ManagerTestsBase
+    class TimeRunnerTests : TestsBase
     {
         [Test]
         public void TickTest()

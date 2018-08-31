@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace BiscuitMaker.Tests.Managers
 {
     [TestFixture]
-    class StamperTests : ManagerTestsBase
+    class StamperTests : TestsBase
     {
         [Test]
         public void ExtrudeTest()

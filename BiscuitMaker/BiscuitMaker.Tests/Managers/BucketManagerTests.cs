@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BiscuitMaker.Tests.Managers
 {
     [TestFixture]
-    class BucketManagerTests : ManagerTestsBase
+    class BucketManagerTests : TestsBase
     {
         [Test]
         public void HandleMotorPulseTest()
