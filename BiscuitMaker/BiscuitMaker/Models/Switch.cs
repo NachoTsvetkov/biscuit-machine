@@ -1,5 +1,8 @@
-﻿namespace BiscuitMaker
+﻿namespace BiscuitMaker.Models
 {
+    using BiscuitMaker.Enumerations;
+    using BiscuitMaker.Interfaces;
+
     public class Switch : IBiscuitComponent
     {
         public SwitchState State { get; set; }

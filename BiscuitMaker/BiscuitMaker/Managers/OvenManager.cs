@@ -4,6 +4,7 @@
 
     using BiscuitMaker.Models;
     using BiscuitMaker.Enumerations;
+    using BiscuitMaker.EventArgs;
 
     public static class OvenManager
     {   
@@ -17,7 +18,7 @@
             maker.Components.Add(newOven);
         }
 
-        public static void HandleSiwtchOn(object sender, OnSwitchOnEventArgs e)
+        public static void HandleSwitchOn(object sender, OnSwitchOnEventArgs e)
         {
             if (e.Maker.FirstOven.State == OvenState.Off)
             {

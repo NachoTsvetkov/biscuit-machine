@@ -1,6 +1,7 @@
 ﻿namespace BiscuitMaker.Managers
 {
     using BiscuitMaker.Models;
+    using BiscuitMaker.EventArgs;
 
     public static class ConveyorManager
     {
@@ -8,7 +9,7 @@
         {
             var conveyor = e.Maker.FirstConveyor;
 
-            // ToDo: Set Extruder and Stapmer to work async
+            // ToDo: Set Extruder and Stamper to work async
             Extruder.HandleMotorPulse(sender, e);
             Stamper.HandleMotorPulse(sender, e);
             BucketManager.HandleMotorPulse(sender, e);

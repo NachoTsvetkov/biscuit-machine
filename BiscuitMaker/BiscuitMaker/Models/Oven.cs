@@ -1,6 +1,7 @@
-﻿namespace BiscuitMaker
+﻿namespace BiscuitMaker.Models
 {
     using BiscuitMaker.Enumerations;
+    using BiscuitMaker.Interfaces;
 
     public class Oven : IBiscuitComponent
     {

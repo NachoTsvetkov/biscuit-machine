@@ -1,4 +1,6 @@
 ﻿
+using BiscuitMaker.EventArgs;
+
 namespace BiscuitMaker.Tests.Managers
 {
     using BiscuitMaker.Managers;

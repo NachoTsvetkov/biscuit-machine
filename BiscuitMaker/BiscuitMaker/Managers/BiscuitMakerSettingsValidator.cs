@@ -16,38 +16,31 @@
             );
 
             errorMessage += GetErrorMessage(throws,
-                    string.IsNullOrEmpty(errorMessage) &&
-                    settings.ConveyorSize <= 2 + settings.OvenSize,
+                    settings != null && (string.IsNullOrEmpty(errorMessage) &&
+                                         settings.ConveyorSize <= 2 + settings.OvenSize),
                 "Conveyor too small"
             );
 
             errorMessage += GetErrorMessage(throws,  
-                    string.IsNullOrEmpty(errorMessage) &&
-                    (settings.ExtruderIndex >= settings.StamperIndex ||
-                    settings.StamperIndex >= settings.OvenIndex ||
-                    settings.OvenIndex >= (settings.OvenIndex + settings.OvenSize) ||
-                    (settings.OvenIndex + settings.OvenSize) >= settings.ConveyorSize), 
+                    settings != null && (string.IsNullOrEmpty(errorMessage) &&
+                                         (settings.ExtruderIndex >= settings.StamperIndex ||
+                                          settings.StamperIndex >= settings.OvenIndex ||
+                                          settings.OvenIndex >= (settings.OvenIndex + settings.OvenSize) ||
+                                          (settings.OvenIndex + settings.OvenSize) >= settings.ConveyorSize)), 
                 "Invalid component placement"
             );
 
             errorMessage += GetErrorMessage(throws, 
-                    string.IsNullOrEmpty(errorMessage) &&
-                    (settings.OvenMaxTemp <= settings.OvenMinTemp ||
-                    settings.OvenMaxTemp <= 0 ||
-                    settings.OvenMinTemp <= 0 ||
-                    settings.OvenHeatingRate <= 0 ||
-                    settings.OvenCoolingRate <= 0),
+                    settings != null && (string.IsNullOrEmpty(errorMessage) &&
+                                         (settings.OvenMaxTemp <= settings.OvenMinTemp ||
+                                          settings.OvenMaxTemp <= 0 ||
+                                          settings.OvenMinTemp <= 0 ||
+                                          settings.OvenHeatingRate <= 0 ||
+                                          settings.OvenCoolingRate <= 0)),
                 "Invalid oven temperature settings"
             );
 
-            if (string.IsNullOrEmpty(errorMessage))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return string.IsNullOrEmpty(errorMessage);
         }
 
         private static string GetErrorMessage(bool throws, bool predicate, string errorMessage)

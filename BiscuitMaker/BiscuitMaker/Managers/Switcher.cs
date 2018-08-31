@@ -2,6 +2,9 @@
 {
     using System;
     using BiscuitMaker.Models;
+    using BiscuitMaker.Enumerations;
+    using BiscuitMaker.EventArgs;
+    using BiscuitMaker.Interfaces;
 
     public class Switcher : IBiscuitComponent
     {

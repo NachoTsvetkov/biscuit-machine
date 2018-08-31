@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using System;
+using BiscuitMaker.EventArgs;
+
 namespace BiscuitMaker.Tests.Managers
 {
     using System.Linq;

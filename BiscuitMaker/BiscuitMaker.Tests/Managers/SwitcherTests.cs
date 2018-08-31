@@ -1,5 +1,7 @@
 ﻿
 
+using BiscuitMaker.Enumerations;
+
 namespace BiscuitMaker.Tests.Managers
 {
     using BiscuitMaker.Managers;

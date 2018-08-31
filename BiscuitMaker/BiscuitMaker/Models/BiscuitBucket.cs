@@ -1,6 +1,7 @@
 ﻿namespace BiscuitMaker.Models
 {
     using System.Collections.Generic;
+    using BiscuitMaker.Interfaces;
 
     public class BiscuitBucket : IBiscuitComponent
     {

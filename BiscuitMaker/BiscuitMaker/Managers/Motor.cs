@@ -2,6 +2,9 @@
 {
     using System;
     using BiscuitMaker.Models;
+    using BiscuitMaker.Enumerations;
+    using BiscuitMaker.EventArgs;
+    using BiscuitMaker.Interfaces;
 
     public class Motor : IBiscuitComponent
     {
@@ -22,7 +25,7 @@
                 return;
             }
 
-            for (int i = 0; i < e.Maker.Settings.RevolutionsPerTick; i++)
+            for (var i = 0; i < e.Maker.Settings.RevolutionsPerTick; i++)
             {
                 this.Pulse(e.Maker);
             }

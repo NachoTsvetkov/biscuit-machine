@@ -1,4 +1,4 @@
-﻿namespace BiscuitMaker
+﻿namespace BiscuitMaker.Interfaces
 {
     public interface IBiscuitComponent
     {

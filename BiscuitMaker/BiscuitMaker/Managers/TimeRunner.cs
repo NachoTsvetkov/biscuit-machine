@@ -2,6 +2,8 @@
 {
     using System;
     using BiscuitMaker.Models;
+    using BiscuitMaker.EventArgs;
+    using BiscuitMaker.Interfaces;
 
     public class TimeRunner : IBiscuitComponent
     {

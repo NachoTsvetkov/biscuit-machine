@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using BiscuitMaker.Models;
+    using BiscuitMaker.EventArgs;
 
     public static class Stamper
     {
@@ -25,8 +26,8 @@
         {
             var conveyor = e.Maker.FirstConveyor;
             var stamperIndex = e.Maker.Settings.StamperIndex;
-            var biscuitToBeStampled = conveyor.Belt.ElementAt(stamperIndex);
-            var stampedBiscuit = Stamper.Stamp(biscuitToBeStampled);
+            var biscuitToBeStamped = conveyor.Belt.ElementAt(stamperIndex);
+            var stampedBiscuit = Stamper.Stamp(biscuitToBeStamped);
 
             conveyor.Belt.Insert(stamperIndex, stampedBiscuit);
             conveyor.Belt.RemoveAt(stamperIndex + 1);

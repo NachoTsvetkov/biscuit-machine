@@ -1,3 +1,0 @@
-﻿The basic idea behind the managers is that they should be pure functionality. This is why all the classes are stateless and static. 
-
-Other good ideas for the folder name could be Business Logic, Controllers, etc. 

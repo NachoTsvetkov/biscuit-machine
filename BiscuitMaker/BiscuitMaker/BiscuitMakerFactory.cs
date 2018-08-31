@@ -1,4 +1,6 @@
-﻿namespace BiscuitMaker
+﻿using BiscuitMaker.Interfaces;
+
+namespace BiscuitMaker
 {
     using System.Collections.Generic;
 
@@ -40,7 +42,7 @@
             components.Add(timeRunner);
 
             var biscuitMaker = BiscuitMakerObject.Create(components, settings);
-            biscuitMaker.FirstSwitcher.RaiseSwitchOn += OvenManager.HandleSiwtchOn;
+            biscuitMaker.FirstSwitcher.RaiseSwitchOn += OvenManager.HandleSwitchOn;
             biscuitMaker.FirstTimeRunner.RaiseClockTick += OvenManager.HandleClockTick;
 
             biscuitMaker.FirstTimeRunner.RaiseClockTick += biscuitMaker.FirstMotor.HandleClockTick;

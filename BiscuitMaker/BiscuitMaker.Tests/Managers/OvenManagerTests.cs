@@ -1,4 +1,6 @@
-﻿namespace BiscuitMaker.Tests.Managers
+﻿using BiscuitMaker.EventArgs;
+
+namespace BiscuitMaker.Tests.Managers
 {
     using BiscuitMaker.Enumerations;
     using BiscuitMaker.Managers;
@@ -22,7 +24,7 @@
         [Test]
         public void HandleSiwtchOnTest()
         {
-            Action act = () => OvenManager.HandleSiwtchOn(null, new OnSwitchOnEventArgs { Maker = this.Maker });
+            Action act = () => OvenManager.HandleSwitchOn(null, new OnSwitchOnEventArgs { Maker = this.Maker });
             act.Should().NotThrow();
 
             this.Maker.FirstOven.State.Should().Be(OvenState.Heating);

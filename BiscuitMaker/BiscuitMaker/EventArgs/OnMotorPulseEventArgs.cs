@@ -1,7 +1,5 @@
-﻿namespace BiscuitMaker
+﻿namespace BiscuitMaker.EventArgs
 {
-    using BiscuitMaker.EventArgs;
-
     /// <summary>
     /// Contains all the components that are moved by the engine
     /// </summary>

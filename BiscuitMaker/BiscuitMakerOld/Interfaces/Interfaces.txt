@@ -1,3 +1,0 @@
-﻿According to the Dependency inversion principle of the S.O.L.I.D. princples one sould depend on abstractions instead of concretions.
-
-Ideally not only the logic but the state classes could also be set behind interfaces.

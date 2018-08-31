@@ -3,6 +3,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using System;
 using System.Linq;
+using BiscuitMaker.EventArgs;
 
 namespace BiscuitMaker.Tests.Managers
 {

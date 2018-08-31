@@ -1,9 +1,16 @@
 ﻿namespace BiscuitMaker
 {
     using BiscuitMaker.Models;
-
+    
+    /// <summary>
+    /// Simple facade for displaying current state. To be consumed and extended wherever
+    /// </summary>
     public class BiscuitMakerDisplay
     {
+        /// <summary>
+        /// Initializes new instance of the <see cref=BiscuitMakerDisplay /> class.
+        /// </summary>
+        /// <param name="maker">The maker to be displayed</param>
         public BiscuitMakerDisplay(BiscuitMakerObject maker)
         {
             this.Maker = maker;

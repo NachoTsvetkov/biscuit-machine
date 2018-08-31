@@ -1,4 +1,4 @@
-﻿namespace BiscuitMaker
+﻿namespace BiscuitMaker.Enumerations
 {
     public enum SwitchState
     {

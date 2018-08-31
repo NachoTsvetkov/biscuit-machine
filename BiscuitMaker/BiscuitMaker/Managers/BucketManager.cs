@@ -1,4 +1,6 @@
-﻿namespace BiscuitMaker.Managers
+﻿using BiscuitMaker.EventArgs;
+
+namespace BiscuitMaker.Managers
 {
     using BiscuitMaker.Models;
     using System.Linq;
@@ -10,16 +12,16 @@
             var conveyor = e.Maker.FirstConveyor;
             var bucket = e.Maker.FirstBucket;
             var last = conveyor.Belt.LastOrDefault();
-            if (last != null)
-            {
-                var biscuit = Biscuit.Create(
-                    isExtruded: last.IsExtruded,
-                    isStamped: last.IsStamped,
-                    isDone: true
-                );
 
-                bucket.Biscuits.Add(biscuit);
-            }
+            if (last == null) return;
+
+            var biscuit = Biscuit.Create(
+                isExtruded: last.IsExtruded,
+                isStamped: last.IsStamped,
+                isDone: true
+            );
+
+            bucket.Biscuits.Add(biscuit);
         }
     }
 }

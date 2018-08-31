@@ -1,4 +1,6 @@
-﻿namespace BiscuitMaker.Tests.Managers
+﻿using BiscuitMaker.EventArgs;
+
+namespace BiscuitMaker.Tests.Managers
 {
     using BiscuitMaker.Enumerations;
     using BiscuitMaker.Managers;

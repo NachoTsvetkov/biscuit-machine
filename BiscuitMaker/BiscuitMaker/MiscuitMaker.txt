@@ -1,2 +1,2 @@
 ﻿This is basic first version implementation. It can be improved upon given time in multple directions.
-In Ideal world dependance injection should be implemented.
+In Ideal world dependance injection should be implemented. And Style Cop Rules will be taken care of
