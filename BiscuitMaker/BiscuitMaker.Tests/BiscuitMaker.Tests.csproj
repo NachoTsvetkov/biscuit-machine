@@ -51,6 +51,15 @@
     <Compile Include="BiscuitMakerFactoryTests.cs" />
     <Compile Include="Managers\BiscuitMakerSettingsValidatorTests.cs" />
     <Compile Include="Managers\BiscuitMakerManagerTests.cs" />
+    <Compile Include="Managers\BucketManagerTests.cs" />
+    <Compile Include="Managers\ConveyorManagerTests.cs" />
+    <Compile Include="Managers\ExtruderTests.cs" />
+    <Compile Include="Managers\ManagerTestsBase.cs" />
+    <Compile Include="Managers\MotorTests.cs" />
+    <Compile Include="Managers\OvenManagerTests.cs" />
+    <Compile Include="Managers\StamperTests.cs" />
+    <Compile Include="Managers\SwitcherTests.cs" />
+    <Compile Include="Managers\TimeRunnerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

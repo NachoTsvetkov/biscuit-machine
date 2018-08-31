@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace BiscuitMaker
 {
@@ -18,6 +19,17 @@ namespace BiscuitMaker
             );
 
             return newBiscuit;
+        }
+        
+        public static void HandleMotorPulse(object sender, OnMotorPulseEventArgs e)
+        {
+            var conveyor = e.Maker.FirstConveyor;
+            var stamperIndex = e.Maker.Settings.StamperIndex;
+            var biscuitToBeStampled = conveyor.Belt.ElementAt(stamperIndex);
+            var stampedBiscuit = Stamper.Stamp(biscuitToBeStampled);
+
+            conveyor.Belt.Insert(stamperIndex, stampedBiscuit);
+            conveyor.Belt.RemoveAt(stamperIndex + 1);
         }
     }
 }

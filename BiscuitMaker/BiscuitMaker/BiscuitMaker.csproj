@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\IBiscuitComponent.cs" />
     <Compile Include="Managers\BiscuitMakerManager.cs" />
     <Compile Include="Managers\BiscuitMakerSettingsValidator.cs" />
+    <Compile Include="Managers\BucketManager.cs" />
     <Compile Include="Managers\ConveyorManager.cs" />
     <Compile Include="Managers\Extruder.cs" />
     <Compile Include="Managers\Motor.cs" />

@@ -8,14 +8,6 @@ namespace BiscuitMaker
     {
         public List<Biscuit> Belt { get; private set; }
 
-        public int Count
-        {
-            get
-            {
-                return this.Belt.Count;
-            }
-        }
-
         public bool HasBiscuits
         {
             get

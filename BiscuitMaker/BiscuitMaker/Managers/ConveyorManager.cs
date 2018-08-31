@@ -4,32 +4,20 @@ namespace BiscuitMaker.Managers
 {
     public static class ConveyorManager
     {
-        internal static void HandleMotorPulse(object sender, OnMotorPulseEventArgs e)
+        public static void HandleMotorPulse(object sender, OnMotorPulseEventArgs e)
         {
             var conveyor = e.Maker.FirstConveyor;
 
-            // Extrude
-            var extruderIndex = e.Maker.Settings.ExtruderIndex;
-            var biscuit = Extruder.Extrude();
-            conveyor.Belt.Insert(extruderIndex, biscuit);
+            // ToDo: Set Extruder and Stapmer to work async
+            Extruder.HandleMotorPulse(sender, e);
+            Stamper.HandleMotorPulse(sender, e);
+            BucketManager.HandleMotorPulse(sender, e);
+            
+            RollBelt(conveyor);
+        }
 
-            // Stapm
-            var stamperIndex = e.Maker.Settings.StamperIndex;
-            var biscuitToBeStampled = conveyor.Belt.ElementAt(stamperIndex);
-            var stampedBiscuit = Stamper.Stamp(biscuitToBeStampled);
-
-            conveyor.Belt.Insert(stamperIndex, biscuit);
-            conveyor.Belt.RemoveAt(stamperIndex + 1);
-
-            // Add to bucket
-            var bucket = e.Maker.FirstBucket;
-            var last = conveyor.Belt.LastOrDefault();
-            if (last != null)
-            {
-                bucket.Biscuits.Add(last);
-            }
-
-            // shift last 
+        private static void RollBelt(Conveyor conveyor)
+        {
             conveyor.Belt.Insert(0, null);
             conveyor.Belt.RemoveAt(conveyor.Belt.Count - 1);
         }
