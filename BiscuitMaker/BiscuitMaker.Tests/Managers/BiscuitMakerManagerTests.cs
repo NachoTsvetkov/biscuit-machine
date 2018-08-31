@@ -57,8 +57,6 @@ namespace BiscuitMaker.Tests.Managers
             this.Maker.FirstOven.CurrentTemperature.Should().Be(222);
             this.Maker.FirstConveyor.HasBiscuits.Should().BeTrue();
             this.Maker.FirstConveyor.Belt.Count(x => x != null).Should().Be(1);
-
-            
         }
         
         [Test]

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BiscuitMakerDisplay.cs" />
     <Compile Include="BiscuitMakerFactory.cs" />
     <Compile Include="Enumerations\OvenState.cs" />
     <Compile Include="Enumerations\SwitchState.cs" />
