@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BiscuitMaker.Managers
+﻿namespace BiscuitMaker.Managers
 {
+    using System;
+
+    using BiscuitMaker.Models;
+
     public class TimeRunner : IBiscuitComponent
     {
         public event EventHandler<OnClockTickEventArgs> RaiseClockTick;
 
-        public void Tick(BiscuitMaker maker)
+        public void Tick(BiscuitMakerObject maker)
         {
             this.RaiseClockTick?.Invoke(this, new OnClockTickEventArgs { Maker = maker });
         }

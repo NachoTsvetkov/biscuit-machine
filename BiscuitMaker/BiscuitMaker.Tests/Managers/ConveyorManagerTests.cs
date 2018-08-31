@@ -15,6 +15,7 @@ namespace BiscuitMaker.Tests.Managers
         [Test]
         public void HandleOneMotorPulseTest()
         {
+            BiscuitMakerManager.TurnOn(this.Maker);
             Action action = () => ConveyorManager.HandleMotorPulse(
                 null, 
                 new OnMotorPulseEventArgs { Maker = this.Maker }
@@ -30,6 +31,7 @@ namespace BiscuitMaker.Tests.Managers
         [Test]
         public void HandleTwoMotorPulseTest()
         {
+            BiscuitMakerManager.TurnOn(this.Maker);
             Action action = () => ConveyorManager.HandleMotorPulse(
                 null,
                 new OnMotorPulseEventArgs { Maker = this.Maker }
@@ -50,6 +52,7 @@ namespace BiscuitMaker.Tests.Managers
         [Test]
         public void HandleFullCycleMotorPulseTest()
         {
+            BiscuitMakerManager.TurnOn(this.Maker);
             Action action = () => ConveyorManager.HandleMotorPulse(
                 null,
                 new OnMotorPulseEventArgs { Maker = this.Maker }

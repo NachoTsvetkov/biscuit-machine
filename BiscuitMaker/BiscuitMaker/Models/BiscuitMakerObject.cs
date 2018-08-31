@@ -1,12 +1,10 @@
-﻿using BiscuitMaker.Managers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BiscuitMaker
+﻿namespace BiscuitMaker.Models
 {
-    public class BiscuitMaker
+    using BiscuitMaker.Managers;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class BiscuitMakerObject
     {
         /// <summary>
         /// The components are not separate properties because the Biscuit Maker can have
@@ -72,15 +70,15 @@ namespace BiscuitMaker
             }
         }
 
-        private BiscuitMaker(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
+        private BiscuitMakerObject(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
         {
             this.Components = components;
             this.Settings = settings;
         }
 
-        public static BiscuitMaker Create(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
+        public static BiscuitMakerObject Create(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
         {
-            return new BiscuitMaker(components, settings);
+            return new BiscuitMakerObject(components, settings);
         }
     }
 }

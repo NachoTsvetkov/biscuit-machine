@@ -65,7 +65,7 @@
     <Compile Include="Managers\TimeRunner.cs" />
     <Compile Include="Models\Biscuit.cs" />
     <Compile Include="Models\BiscuitBucket.cs" />
-    <Compile Include="Models\BiscuitMaker.cs" />
+    <Compile Include="Models\BiscuitMakerObject.cs" />
     <Compile Include="Models\BiscuitMakerSettings.cs" />
     <Compile Include="Models\Clock.cs" />
     <Compile Include="Models\Conveyor.cs" />
@@ -77,6 +77,7 @@
     <Content Include="EventArgs\EventArgs.txt" />
     <Content Include="Interfaces\Interfaces.txt" />
     <Content Include="Managers\Managers.txt" />
+    <Content Include="MiscuitMaker.txt" />
     <Content Include="Models\Models.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

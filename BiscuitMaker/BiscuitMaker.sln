@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMaker.Tests", "Biscu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMaker", "BiscuitMaker\BiscuitMaker.csproj", "{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMakerConsole", "BiscuitMakerConsole\BiscuitMakerConsole.csproj", "{5029EE68-9886-4E9E-880C-57D6A07EEB0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2EF40C5-F7F3-40E4-ADBB-CD87554ADA1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5029EE68-9886-4E9E-880C-57D6A07EEB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5029EE68-9886-4E9E-880C-57D6A07EEB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5029EE68-9886-4E9E-880C-57D6A07EEB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5029EE68-9886-4E9E-880C-57D6A07EEB0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

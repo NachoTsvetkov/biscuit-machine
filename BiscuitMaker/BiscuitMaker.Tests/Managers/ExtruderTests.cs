@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using BiscuitMaker.Managers;
+using FluentAssertions;
 using NUnit.Framework;
 using System;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace BiscuitMaker.Tests.Managers
         [Test]
         public void HandleMotorPulseTest()
         {
+            BiscuitMakerManager.TurnOn(this.Maker);
+
             Action action = () => Extruder.HandleMotorPulse(
                 null,
                 new OnMotorPulseEventArgs { Maker = this.Maker }

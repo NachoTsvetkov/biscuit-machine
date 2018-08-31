@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BiscuitMaker
+﻿namespace BiscuitMaker
 {
+    using BiscuitMaker.Models;
+
     public class BiscuitMakerDisplay
     {
-        public BiscuitMakerDisplay(BiscuitMaker maker)
+        public BiscuitMakerDisplay(BiscuitMakerObject maker)
         {
             this.Maker = maker;
         }
 
-        public BiscuitMaker Maker { get; }
+        public BiscuitMakerObject Maker { get; }
 
         public BiscuitMakerSettings Settings
         {

@@ -1,5 +1,6 @@
 ﻿namespace BiscuitMaker.Tests
 {
+    using BiscuitMaker.Models;
     using NUnit.Framework;
 
     [TestFixture]
@@ -20,7 +21,7 @@
             RoomTemperature = 22,
         };
 
-        public BiscuitMaker Maker { get; set; }
+        public BiscuitMakerObject Maker { get; set; }
 
         [SetUp]
         public void SetUp()

@@ -1,13 +1,13 @@
-﻿using BiscuitMaker.Managers;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BiscuitMaker
+﻿namespace BiscuitMaker
 {
+    using System.Collections.Generic;
+
+    using BiscuitMaker.Managers;
+    using BiscuitMaker.Models;
+
     public static class BiscuitMakerFactory
     {
-        public static BiscuitMaker Create(BiscuitMakerSettings settings = null)
+        public static BiscuitMakerObject Create(BiscuitMakerSettings settings = null)
         {
             var settingsAreValid = BiscuitMakerSettingsValidator.ValidateSettings(settings, false);
 
@@ -39,7 +39,7 @@ namespace BiscuitMaker
             var timeRunner = new TimeRunner();
             components.Add(timeRunner);
 
-            var biscuitMaker = BiscuitMaker.Create(components, settings);
+            var biscuitMaker = BiscuitMakerObject.Create(components, settings);
             biscuitMaker.FirstSwitcher.RaiseSwitchOn += OvenManager.HandleSiwtchOn;
             biscuitMaker.FirstTimeRunner.RaiseClockTick += OvenManager.HandleClockTick;
 

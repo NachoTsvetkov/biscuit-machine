@@ -1,13 +1,14 @@
-﻿using BiscuitMaker.Enumerations;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace BiscuitMaker.Managers
 {
+    using System;
+
+    using BiscuitMaker.Models;
+    using BiscuitMaker.Enumerations;
+
     public static class OvenManager
     {   
-        public static void SetState(BiscuitMaker maker, int currentTemperature, OvenState state)
+        public static void SetState(BiscuitMakerObject maker, int currentTemperature, OvenState state)
         {
             var isWorkingTemperature = currentTemperature <= maker.Settings.OvenMaxTemp &&
                 currentTemperature >= maker.Settings.OvenMinTemp;

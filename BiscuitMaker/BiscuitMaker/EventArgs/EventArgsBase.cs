@@ -1,7 +1,9 @@
 ﻿namespace BiscuitMaker.EventArgs
 {
+    using BiscuitMaker.Models;
+
     public class EventArgsBase
     {
-        public BiscuitMaker Maker { get; set; }
+        public BiscuitMakerObject Maker { get; set; }
     }
 }
