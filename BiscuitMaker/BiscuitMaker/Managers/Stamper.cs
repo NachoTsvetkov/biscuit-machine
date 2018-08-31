@@ -1,11 +1,30 @@
-﻿namespace BiscuitMaker.Managers
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Stamper.cs" company="NMC">
+//   Nacho Tsvetkov
+// </copyright>
+// <summary>
+//   Defines the Stamper type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BiscuitMaker.Managers
 {
     using System.Linq;
-    using BiscuitMaker.Models;
+
     using BiscuitMaker.EventArgs;
+    using BiscuitMaker.Models;
 
     public static class Stamper
     {
+        /// <summary>
+        /// The stamp.
+        /// </summary>
+        /// <param name="biscuit">
+        /// The biscuit.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Biscuit"/>.
+        /// </returns>
         public static Biscuit Stamp(Biscuit biscuit)
         {
             if (biscuit == null)
@@ -16,12 +35,20 @@
             var newBiscuit = Biscuit.Create(
                 isExtruded: biscuit.IsExtruded,
                 isStamped: true,
-                isDone: biscuit.IsDone
-            );
+                isDone: biscuit.IsDone);
 
             return newBiscuit;
         }
-        
+
+        /// <summary>
+        /// The handle motor pulse.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         public static void HandleMotorPulse(object sender, OnMotorPulseEventArgs e)
         {
             var conveyor = e.Maker.FirstConveyor;

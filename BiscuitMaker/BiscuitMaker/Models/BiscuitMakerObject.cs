@@ -1,20 +1,52 @@
-﻿namespace BiscuitMaker.Models
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BiscuitMakerObject.cs" company="NMC">
+//   Nacho Tsvetkov
+// </copyright>
+// <summary>
+//   Defines the BiscuitMakerObject type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BiscuitMaker.Models
 {
     using System.Collections.Generic;
     using System.Linq;
     using BiscuitMaker.Interfaces;
     using BiscuitMaker.Managers;
-    
+
+    /// <summary>
+    /// The biscuit maker object.
+    /// </summary>
     public class BiscuitMakerObject
     {
         /// <summary>
-        /// The components are not separate properties because the Biscuit Maker can have
-        /// multiple Stampers, Switches, Conveyors etc. Just to make it more flexible
+        /// Initializes a new instance of the <see cref="BiscuitMakerObject"/> class.
+        /// </summary>
+        /// <param name="components">
+        /// The components.
+        /// </param>
+        /// <param name="settings">
+        /// The settings.
+        /// </param>
+        private BiscuitMakerObject(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
+        {
+            this.Components = components;
+            this.Settings = settings;
+        }
+
+        /// <summary>
+        /// Gets the components.
         /// </summary>
         public List<IBiscuitComponent> Components { get; private set; }
 
+        /// <summary>
+        /// Gets the settings.
+        /// </summary>
         public BiscuitMakerSettings Settings { get; private set; }
 
+        /// <summary>
+        /// Gets the first conveyor.
+        /// </summary>
         public Conveyor FirstConveyor
         {
             get
@@ -23,6 +55,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the first oven.
+        /// </summary>
         public Oven FirstOven
         {
             get
@@ -31,6 +66,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the first bucket.
+        /// </summary>
         public BiscuitBucket FirstBucket
         {
             get
@@ -39,6 +77,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the first switch.
+        /// </summary>
         public Switch FirstSwitch
         {
             get
@@ -47,6 +88,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the first switcher.
+        /// </summary>
         public Switcher FirstSwitcher
         {
             get
@@ -55,6 +99,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the first time runner.
+        /// </summary>
         public TimeRunner FirstTimeRunner
         {
             get
@@ -63,6 +110,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the first motor.
+        /// </summary>
         public Motor FirstMotor
         {
             get
@@ -71,12 +121,18 @@
             }
         }
 
-        private BiscuitMakerObject(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
-        {
-            this.Components = components;
-            this.Settings = settings;
-        }
-
+        /// <summary>
+        /// The create.
+        /// </summary>
+        /// <param name="components">
+        /// The components.
+        /// </param>
+        /// <param name="settings">
+        /// The settings.
+        /// </param>
+        /// <returns>
+        /// The <see cref="BiscuitMakerObject"/>.
+        /// </returns>
         public static BiscuitMakerObject Create(List<IBiscuitComponent> components, BiscuitMakerSettings settings)
         {
             return new BiscuitMakerObject(components, settings);

@@ -57,7 +57,6 @@
     <Compile Include="EventArgs\OnSwitchOffEventArgs.cs" />
     <Compile Include="EventArgs\OnSwitchOnEventArgs.cs" />
     <Compile Include="EventArgs\OnSwitchPauseEventArgs.cs" />
-    <Compile Include="EventArgs\OnWorkingTempReachedEventArgs.cs" />
     <Compile Include="Interfaces\IBiscuitComponent.cs" />
     <Compile Include="Managers\BiscuitMakerManager.cs" />
     <Compile Include="Managers\BiscuitMakerSettingsValidator.cs" />

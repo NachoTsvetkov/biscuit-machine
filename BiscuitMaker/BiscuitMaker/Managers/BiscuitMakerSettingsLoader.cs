@@ -1,10 +1,28 @@
-﻿namespace BiscuitMaker.Managers
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BiscuitMakerSettingsLoader.cs" company="NMC">
+//   Nacho Tsvetkov
+// </copyright>
+// <summary>
+//   Defines the BiscuitMakerSettingsLoader type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BiscuitMaker.Managers
 {
     using System.Configuration;
     using BiscuitMaker.Models;
 
+    /// <summary>
+    /// The biscuit maker settings loader.
+    /// </summary>
     public static class BiscuitMakerSettingsLoader
     {
+        /// <summary>
+        /// The load from config.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="BiscuitMakerSettings"/>.
+        /// </returns>
         public static BiscuitMakerSettings LoadFromConfig()
         {
             var settings = new BiscuitMakerSettings();

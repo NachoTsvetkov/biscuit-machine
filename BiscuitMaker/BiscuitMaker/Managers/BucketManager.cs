@@ -1,9 +1,18 @@
-﻿using BiscuitMaker.EventArgs;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BucketManager.cs" company="NMC">
+//   Nacho Tsvetkov
+// </copyright>
+// <summary>
+//   Defines the BucketManager type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace BiscuitMaker.Managers
 {
-    using BiscuitMaker.Models;
     using System.Linq;
+
+    using BiscuitMaker.EventArgs;
+    using BiscuitMaker.Models;
 
     public class BucketManager
     {

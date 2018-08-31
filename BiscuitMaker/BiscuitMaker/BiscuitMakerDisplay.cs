@@ -1,4 +1,13 @@
-﻿namespace BiscuitMaker
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BiscuitMakerDisplay.cs" company="NMC">
+//   Nacho Tsvetkov
+// </copyright>
+// <summary>
+//   Simple facade for displaying current state. To be consumed and extended wherever
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BiscuitMaker
 {
     using BiscuitMaker.Models;
     
@@ -8,54 +17,44 @@
     public class BiscuitMakerDisplay
     {
         /// <summary>
-        /// Initializes new instance of the <see cref=BiscuitMakerDisplay /> class.
+        /// Initializes a new instance of the <see cref="BiscuitMakerDisplay"/> class.
         /// </summary>
-        /// <param name="maker">The maker to be displayed</param>
+        /// <param name="maker">
+        /// The maker.
+        /// </param>
         public BiscuitMakerDisplay(BiscuitMakerObject maker)
         {
             this.Maker = maker;
         }
 
+        /// <summary>
+        /// Gets the maker.
+        /// </summary>
         public BiscuitMakerObject Maker { get; }
 
-        public BiscuitMakerSettings Settings
-        {
-            get
-            {
-                return this.Maker.Settings;
-            }
-        }
+        /// <summary>
+        /// Gets the settings.
+        /// </summary>
+        public BiscuitMakerSettings Settings => this.Maker.Settings;
 
-        public Conveyor Conveyor
-        {
-            get
-            {
-                return this.Maker.FirstConveyor;
-            }
-        }
+        /// <summary>
+        /// The conveyor.
+        /// </summary>
+        public Conveyor Conveyor => this.Maker.FirstConveyor;
 
-        public BiscuitBucket Bucket
-        {
-            get
-            {
-                return this.Maker.FirstBucket;
-            }
-        }
+        /// <summary>
+        /// The bucket.
+        /// </summary>
+        public BiscuitBucket Bucket => this.Maker.FirstBucket;
 
-        public Switch Switch
-        {
-            get
-            {
-                return this.Maker.FirstSwitch;
-            }
-        }
+        /// <summary>
+        /// Gets the switch.
+        /// </summary>
+        public Switch Switch => this.Maker.FirstSwitch;
 
-        public Oven Oven
-        {
-            get
-            {
-                return this.Maker.FirstOven;
-            }
-        }
+        /// <summary>
+        /// Gets the oven.
+        /// </summary>
+        public Oven Oven => this.Maker.FirstOven;
     }
 }

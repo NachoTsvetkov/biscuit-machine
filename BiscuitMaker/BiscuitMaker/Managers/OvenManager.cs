@@ -1,13 +1,37 @@
-﻿namespace BiscuitMaker.Managers
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="OvenManager.cs" company="NMC">
+//   Nacho Tsvetkov
+// </copyright>
+// <summary>
+//   Defines the OvenManager type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace BiscuitMaker.Managers
 {
     using System;
 
-    using BiscuitMaker.Models;
     using BiscuitMaker.Enumerations;
     using BiscuitMaker.EventArgs;
+    using BiscuitMaker.Models;
 
+    /// <summary>
+    /// The oven manager.
+    /// </summary>
     public static class OvenManager
-    {   
+    {
+        /// <summary>
+        /// The set state.
+        /// </summary>
+        /// <param name="maker">
+        /// The maker.
+        /// </param>
+        /// <param name="currentTemperature">
+        /// The current temperature.
+        /// </param>
+        /// <param name="state">
+        /// The state.
+        /// </param>
         public static void SetState(BiscuitMakerObject maker, int currentTemperature, OvenState state)
         {
             var isWorkingTemperature = currentTemperature <= maker.Settings.OvenMaxTemp &&
@@ -18,6 +42,15 @@
             maker.Components.Add(newOven);
         }
 
+        /// <summary>
+        /// The handle switch on.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         public static void HandleSwitchOn(object sender, OnSwitchOnEventArgs e)
         {
             if (e.Maker.FirstOven.State == OvenState.Off)
@@ -26,6 +59,18 @@
             }
         }
 
+        /// <summary>
+        /// The handle clock tick.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        /// <exception cref="ArgumentException">
+        /// If unknown state is presented. Should not happen
+        /// </exception>
         public static void HandleClockTick(object sender, OnClockTickEventArgs e)
         {
             var settings = e.Maker.Settings;

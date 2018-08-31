@@ -1,14 +1,34 @@
-﻿using BiscuitMaker.Interfaces;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BiscuitMakerFactory.cs" company="NMC">
+//   Nacho Tsvetkov
+// </copyright>
+// <summary>
+//   Defines the BiscuitMakerFactory type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace BiscuitMaker
 {
     using System.Collections.Generic;
 
+    using BiscuitMaker.Interfaces;
     using BiscuitMaker.Managers;
     using BiscuitMaker.Models;
 
+    /// <summary>
+    /// The biscuit maker factory.
+    /// </summary>
     public static class BiscuitMakerFactory
     {
+        /// <summary>
+        /// The create.
+        /// </summary>
+        /// <param name="settings">
+        /// The settings.
+        /// </param>
+        /// <returns>
+        /// The <see cref="BiscuitMakerObject"/>.
+        /// </returns>
         public static BiscuitMakerObject Create(BiscuitMakerSettings settings = null)
         {
             var settingsAreValid = BiscuitMakerSettingsValidator.ValidateSettings(settings, false);
@@ -26,11 +46,17 @@ namespace BiscuitMaker
             var switcher = new Switcher();
             components.Add(switcher);
 
-            var conveyor = Conveyor.Create(count: settings.ConveyorSize);
-            components.Add(conveyor);
+            if (settings != null)
+            {
+                var conveyor = Conveyor.Create(count: settings.ConveyorSize);
+                components.Add(conveyor);
+            }
 
-            var oven = Oven.Create(settings.RoomTemperature);
-            components.Add(oven);
+            if (settings != null)
+            {
+                var oven = Oven.Create(settings.RoomTemperature);
+                components.Add(oven);
+            }
 
             var bucket = BiscuitBucket.Create();
             components.Add(bucket);
